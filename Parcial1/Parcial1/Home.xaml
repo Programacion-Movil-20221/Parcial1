@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Parcial1.Home"
+             Title="Home">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Gray" >
+            <Frame CornerRadius="32" Padding="30,30,30,30" Margin="20,20,20,20" BackgroundColor="BlanchedAlmond">
+                <StackLayout >
+                    <Label Text="APP ADMINISTRATIVA" FontSize="30" 
+                           FontAttributes="Bold,Italic" HorizontalTextAlignment="Center"/>
+                    <Label Text="Hola, seleccione la opcion que desea realizar..." 
+                           FontSize="18" Padding="20"/>
+                    <ImageButton Source="cuenta.png" HeightRequest="200" 
+                                 Clicked="Ir_Page_Factura" CornerRadius="55"/>
+                    <ImageButton Source="carrito.png" HeightRequest="200" 
+                                 Clicked="Ir_Page_Products" CornerRadius="55"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

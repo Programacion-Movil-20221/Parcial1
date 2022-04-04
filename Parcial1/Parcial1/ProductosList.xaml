@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Parcial1.ProductosList">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <!--Agregar Filtro-->
+            <Frame CornerRadius="5" Padding="0">
+                <SearchBar x:Name="MainSearchBar" TextChanged="MainSearchBar_TextChanged"
+                           Placeholder="Buscar Producto..." Keyboard="Text" BackgroundColor="White"/>
+            </Frame>
+            
+            <!--Agregar productos-->
+            <Frame x:Name="stackVisible" Margin="8" IsVisible="false">
+                <StackLayout>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".3*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="80"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Source="img_name" Margin="8"/>
+                        <Frame Grid.Column="1" Grid.Row="0" Padding="20,4" CornerRadius="12">
+                            <Entry x:Name="entry_name" Placeholder="Ingrese el nombre"/>
+                        </Frame>
+
+                        <Image Source="img_precio" Margin="8" Grid.Row="1"/>
+                        <Frame Grid.Column="1" Grid.Row="1" Padding="20,4" CornerRadius="12">
+                            <Entry x:Name="entry_precio" Keyboard="Numeric" Placeholder="Ingrese el precio"/>
+                        </Frame>
+
+                        <Image Source="img_cantidad" Margin="8" Grid.Row="2"/>
+                        <Frame Grid.Column="1" Grid.Row="2" Padding="20,4" CornerRadius="12">
+                            <Entry x:Name="entry_units" Keyboard="Numeric" Placeholder="Ingrese la cantidad"/>
+                        </Frame>
+
+                        <Image Source="propina" Margin="8" Grid.Row="3"/>
+                        <Frame Grid.Column="1" Grid.Row="3" CornerRadius="12" Padding="22,10" HasShadow="False" BorderColor="#ccd5de">
+                            <Picker x:Name="picker" Title="Tipo de Material">
+                                <Picker.Items>
+                                    <x:String>Nuevo</x:String>
+                                    <x:String>Reacondicionado</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Frame>
+
+                        <Image Source="cuenta.png" Margin="8" Grid.Row="4"/>
+                        <Frame Grid.Column="1" Grid.Row="4" Padding="20,4" CornerRadius="12">
+                            <Editor x:Name="editor_des" Placeholder="Ingrese una descripcion"/>
+                        </Frame>
+                    </Grid>
+
+                    <Grid ColumnSpacing="50" HorizontalOptions="Center" Margin="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
+
+                        <Frame CornerRadius="50" BackgroundColor="Black" Margin="10" Padding="0" Grid.Column="0" Grid.Row="0">
+                            <ImageButton Source="btn_cancel.png" Clicked="Img_btn_Cancel" Aspect="AspectFill"/>
+                        </Frame>
+                        <Frame CornerRadius="50" BackgroundColor="Black" Padding="0" Margin="10" Grid.Column="1" Grid.Row="0">
+                            <ImageButton Source="btn_save.png" Clicked="Img_btn_Save" Aspect="AspectFill"/>
+                        </Frame>
+                    </Grid>
+
+                </StackLayout>
+            </Frame>
+            
+            <!--Lista de productos-->
+            <ScrollView Margin="5">
+                <ListView x:Name="ListadoProductos" HasUnevenRows="True"
+                          ItemSelected="ListadoProductos_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Frame Padding="0" Margin="2" CornerRadius="5"
+                                           IsClippedToBounds="False" BackgroundColor="Azure">
+                                        <Grid HeightRequest="100">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="60"/>
+                                                <RowDefinition Height="30"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width=".3*"/>
+                                                <ColumnDefinition Width=".4*"/>
+                                                <ColumnDefinition Width=".3*"/>
+                                            </Grid.ColumnDefinitions>
+                                            
+
+                                                <Frame BorderColor="Black" BackgroundColor="Transparent" Grid.RowSpan="2" Padding="0" Margin="10" CornerRadius="15">
+                                                    <Image Source="coffee.png" BackgroundColor="Transparent" Margin="1" Aspect="AspectFill"/>
+                                                </Frame>
+                                                <Label x:Name="lblNombre" Grid.Column="1" FontAttributes="Bold"
+                                                    FontSize="Medium" Text="{Binding Nombre}"
+                                                    VerticalOptions="Center" TextColor="Black"/>
+                                                <Label Grid.Row="1" Grid.Column="1" FontSize="15"
+                                                   Text="{Binding Tipo}" TextColor="Gray"/>
+
+                                                <Button Text="detalle" Clicked="Button_Clicked" Grid.Column="2" Grid.RowSpan="2"/>
+
+
+
+                                        </Grid>
+                                    </Frame>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            
+            <!--Boton agregar producto-->
+            <Frame BackgroundColor="#202934">
+                <Button HorizontalOptions="FillAndExpand" FontAttributes="Bold" 
+                        FontSize="20" TextColor="White" CornerRadius="12" 
+                        BackgroundColor="Red" Text="Agregar" Clicked="Btn_AgregarProducto"/>
+            </Frame>
+
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
