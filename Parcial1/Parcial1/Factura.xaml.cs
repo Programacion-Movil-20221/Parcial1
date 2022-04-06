@@ -40,6 +40,10 @@ namespace Parcial1
             valor_totalp.Text = _total_pagar.ToString("0.##");
             valor_ppp.Text = _total_integrantes.ToString("0.##");
 
+            stackRegistrarCuentaVisible.IsVisible = false;
+            stackeVerCuentaVisible.IsVisible = true;
+
+
         }
 
         private void Limpiar(object sender, EventArgs e)
@@ -52,6 +56,10 @@ namespace Parcial1
             valor_propina.Text = "";
             valor_totalp.Text = "";
             valor_ppp.Text = "";
+
+            stackeVerCuentaVisible.IsVisible = false;
+            stackRegistrarCuentaVisible.IsVisible = true;
+
         }
     }
 }

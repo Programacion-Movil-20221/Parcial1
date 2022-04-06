@@ -112,8 +112,11 @@
                                                 <Label Grid.Row="1" Grid.Column="1" FontSize="15"
                                                    Text="{Binding Tipo}" TextColor="Gray"/>
 
-                                                <Label Text="DETALLE" BackgroundColor="Transparent" Grid.Column="2" Grid.RowSpan="2"
-                                                       FontSize="20" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black"/> 
+                                            <Frame BackgroundColor="NavajoWhite" Grid.Column="2" Grid.RowSpan="2" 
+                                                   Padding="0" CornerRadius="25" Margin="10,15,10,15" >
+                                                <Label Text="DETALLE" HorizontalOptions="Center"
+                                                       FontSize="15" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black"/>
+                                            </Frame>
 
                                         </Grid>
                                     </Frame>

@@ -18,14 +18,15 @@
 
                         <Grid Margin="15,0,10,5">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width=".96*"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="70"/>
                                 <RowDefinition Height="70"/>
                                 <RowDefinition Height="50"/>
+                                <RowDefinition Height="70"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
 
@@ -35,8 +36,10 @@
                                 FontSize="25" FontAttributes="Bold" Grid.Column="0" Grid.Row="1"/>
                             <Label Text="Cantidad: " VerticalOptions="Center"
                                 FontSize="25" FontAttributes="Bold" Grid.Column="0" Grid.Row="2"/>
-                            <Label Text="Descripcion del producto:" VerticalOptions="Center"
+                            <Label Text="Tipo de producto:" VerticalOptions="Center"
                                 FontSize="25" FontAttributes="Bold" Grid.Column="0" Grid.Row="3"/>
+                            <Label Text="Descripcion del producto:" VerticalOptions="Center"
+                                FontSize="25" FontAttributes="Bold" Grid.Column="0" Grid.Row="4"/>
 
                             <Label x:Name="lbl_nombre" Text="" VerticalOptions="Center"
                                 FontSize="25"  Grid.Column="1" Grid.Row="0"/>
@@ -47,8 +50,11 @@
                             <Label x:Name="lbl_cantidad" Text="" VerticalOptions="Center"
                                 FontSize="25" Grid.Column="1" Grid.Row="2"/>
 
+                            <Label x:Name="lbl_tipo" Text="" VerticalOptions="Center"
+                                FontSize="Medium" Grid.Column="1" Grid.Row="3"/>
+
                             <Label x:Name="lbl_descripcion" Text="" VerticalOptions="Center"
-                                FontSize="25" Grid.Column="1" Grid.Row="3"/>
+                                FontSize="25" Grid.Column="1" Grid.Row="4"/>
                         </Grid>
 
                         <Frame BackgroundColor="Transparent" Padding="0">

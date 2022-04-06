@@ -54,9 +54,10 @@ namespace Parcial1
             string nombre = i.Nombre.ToString();
             int precio = int.Parse(i.Precio.ToString("0.##"));
             int cantidad = int.Parse(i.Unidades.ToString("0.##"));
+            string tipo = i.Tipo.ToString();
             string descripcion = i.Descripcion.ToString();
 
-            Navigation.PushAsync(new MostrarProductos(nombre, precio, cantidad, descripcion));
+            Navigation.PushAsync(new MostrarProductos(nombre, precio, cantidad, tipo, descripcion));
         }
 
         private void MainSearchBar_TextChanged(object sender, TextChangedEventArgs e)
