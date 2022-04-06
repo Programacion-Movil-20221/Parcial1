@@ -15,6 +15,17 @@ namespace Parcial1
         public Menu()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
+        private void Ir_Page_Factur(object sender, EventArgs e)
+        {
+            App.FlyoutObj.Detail.Navigation.PushAsync(new Factura());
+            App.FlyoutObj.IsPresented = false;
+        }
+        private void Ir_Page_Product(object sender, EventArgs e)
+        {
+            App.FlyoutObj.Detail.Navigation.PushAsync(new ProductosList());
+            App.FlyoutObj.IsPresented = false;
         }
     }
 }

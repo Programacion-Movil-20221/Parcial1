@@ -15,10 +15,17 @@ namespace Parcial1
         public MostrarProductos(string nombre, int precio, int cantidad, string descripcion)
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+
             lbl_nombre.Text = nombre;
-            lbl_precio.Text = precio.ToString();
-            lbl_cantidad.Text = cantidad.ToString();
+            lbl_precio.Text = "$ " + precio;
+            lbl_cantidad.Text = cantidad + " unidades";
             lbl_descripcion.Text = descripcion;
+        }
+
+        private void ImageButton_Regresar(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
         }
     }
 }

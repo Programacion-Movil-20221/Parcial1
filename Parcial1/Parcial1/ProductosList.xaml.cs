@@ -105,22 +105,19 @@ namespace Parcial1
             stackVisible.IsVisible = false;
         }
 
-        private void Button_Clicked(object sender, EventArgs a)
+        private void Button_Clicked(object sender,  EventArgs e)
         {
+            /*
+            var item = (Products)e.SelectedItem;
+            int j = HallarItemIndex(item.Nombre);
+            var i = ListaProductos[j];
 
+            string nombre = i.Nombre.ToString();
+            int precio = int.Parse(i.Precio.ToString("0.##"));
+            int cantidad = int.Parse(i.Unidades.ToString("0.##"));
+            string descripcion = i.Descripcion.ToString();
 
-            //var item = (Products)e.SelectedItem;
-            //int j = HallarItemIndex(item.Nombre);
-            //var i = ListaProductos[j];
-            ///*string texto = "Nombre: " + i.Nombre +
-            //        "\nTipo: " + i.Tipo +
-            //        "\nPrecio: " + i.Precio +
-            //        "\nUnidades: " + i.Unidades +
-            //        "\nDescripcion: " + i.Descripcion;*/
-
-
-            //string nombre = i.Nombre.ToString();
-            //Navigation.PushAsync(new MostrarProductos(nombre));
+            Navigation.PushAsync(new MostrarProductos(nombre, precio, cantidad, descripcion));*/
         }
     }
 }       

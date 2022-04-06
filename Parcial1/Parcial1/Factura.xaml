@@ -1,12 +1,146 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Parcial1.Factura">
+             x:Class="Parcial1.Factura"
+             Title="Page Factura" BackgroundImageSource="coffee.jpg">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Image Source="valor" HeightRequest="200"/>
+            <ScrollView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout Grid.Row="0">
+
+
+
+                        <Frame Padding="10,15,20,15" BackgroundColor="Transparent">
+                            <Grid HorizontalOptions="CenterAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="255"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <Image Source="cuenta.png" Grid.Column="0" Grid.Row="0"/>
+                                <Frame BackgroundColor="#97B5D3" BorderColor="Black"
+                                   CornerRadius="20" HorizontalOptions="Center"
+                                   WidthRequest="250" Grid.Column="1" Grid.Row="0">
+
+                                    <Entry x:Name="total_cuenta" Keyboard="Numeric"
+                                       TextColor="Black" FontSize="27" MaxLength="25"
+                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                                       Placeholder="valor de la cuenta" PlaceholderColor="Black"/>
+                                </Frame>
+
+                                <Image Source="personas.png" Grid.Column="0" Grid.Row="1"/>
+                                <Frame BackgroundColor="#97B5D3" BorderColor="Black" Padding="15"
+                                   CornerRadius="20" HorizontalOptions="Center"
+                                   WidthRequest="250" Grid.Column="1" Grid.Row="1">
+
+                                    <Entry x:Name="integrantes" Keyboard="Numeric" TextColor="Black" 
+                                       FontSize="28" Placeholder="N° de Integrantes" PlaceholderColor="Black"
+                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                </Frame>
+
+                                <Image Source="propina.png" Grid.Column="0" Grid.Row="2"/>
+                                <Frame BackgroundColor="#97B5D3" BorderColor="Black"
+                                   Padding="5" HorizontalOptions="Center" CornerRadius="20"
+                                   WidthRequest="250" Grid.Column="1" Grid.Row="2">
+
+                                    <Entry x:Name="porc_pro" Keyboard="Numeric" MaxLength="25"
+                                       TextColor="Black" FontSize="30" VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"
+                                       Placeholder="% Propina" PlaceholderColor="Black"/>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+
+                        <Grid HorizontalOptions="CenterAndExpand" HeightRequest="130">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".5*"/>
+                                <ColumnDefinition Width=".5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Text="Pagar" BackgroundColor="#13523D"
+                            TextColor="WhiteSmoke" FontAttributes="Bold" BorderColor="Transparent" 
+                            FontSize="30" Grid.Column="0"
+                            CornerRadius="10" BorderWidth="4"  Clicked="PagarCuenta"/>
+
+                            <Button Text="limpiar" BackgroundColor="#13523D" 
+                                TextColor="WhiteSmoke" FontAttributes="Bold" BorderColor="Transparent"
+                                FontSize="30" Grid.Column="1"
+                                CornerRadius="10" BorderWidth="4" Clicked="Limpiar"/>
+                        </Grid>
+
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1">
+                        <Frame BackgroundColor="Transparent" Padding="10,5,10,20">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".5*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Valor de la cuenta: " Grid.Column="0" Grid.Row="0" 
+                                   TextColor="#fff" FontSize="22"  VerticalTextAlignment="Center" 
+                                   HorizontalTextAlignment="Center"/>
+                                <Frame CornerRadius="20" Background="#97B5D3" BorderColor="#fff" 
+                                   Grid.Column="1" Grid.Row="0">
+                                    <Label x:Name="total_cuentap"  TextColor="#000" FontSize="30" 
+                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                </Frame>
+
+                                <Label Text="Valor de la propina: " Grid.Column="0" Grid.Row="1" 
+                                   TextColor="#fff" FontSize="22"  VerticalTextAlignment="Center" 
+                                   HorizontalTextAlignment="Center"/>
+                                <Frame CornerRadius="20" Background="#97B5D3" BorderColor="#fff" 
+                                   Grid.Column="1" Grid.Row="1">
+                                    <Label x:Name="valor_propina"  TextColor="#000" FontSize="30" 
+                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                </Frame>
+
+                                <Label Text= "Valor total a pagar: " Grid.Column="0" Grid.Row="2" 
+                                   TextColor="#fff" FontSize="22" VerticalTextAlignment="Center" 
+                                   HorizontalTextAlignment="Center"/>
+                                <Frame CornerRadius="20" Background="#97B5D3" BorderColor="#fff" 
+                                   Grid.Column="1" Grid.Row="2">
+                                    <Label x:Name="valor_totalp" TextColor="#000" FontSize="30" 
+                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                </Frame>
+
+                                <Label Text="Aporte por Persona: " Grid.Column="0" Grid.Row="3" 
+                                   TextColor="#fff" FontSize="22" VerticalTextAlignment="Center" 
+                                   HorizontalTextAlignment="Center"/>
+                                <Frame CornerRadius="20" Background="#97B5D3" BorderColor="#fff" 
+                                   Grid.Column="1" Grid.Row="3" >
+                                    <Label x:Name="valor_ppp" TextColor="#000" FontSize="30" 
+                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                </Frame>
+
+                            </Grid>
+                        </Frame>
+
+                    </StackLayout>
+
+                </Grid>
+            </ScrollView>
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

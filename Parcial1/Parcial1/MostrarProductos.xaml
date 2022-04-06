@@ -1,47 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Parcial1.MostrarProductos">
+             x:Class="Parcial1.MostrarProductos"
+             BackgroundImageSource="https://img.freepik.com/vector-gratis/textura-fondo-acuarela-pintada-mano-azul_1048-15604.jpg">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Padding="20,20,20,20">
-                <StackLayout Margin="5" Spacing="30">
-                    <ImageButton Source="coffee" HeightRequest="300"/>
-                    <Grid HorizontalOptions="Center">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
+        <StackLayout>
+            <StackLayout>
+                <Frame CornerRadius="60" BackgroundColor="Transparent" Margin="50,50,50,0" 
+                       Padding="0" Grid.Column="0" Grid.Row="0">
+                    <ImageButton Source="personas.png" Aspect="Fill"
+                                 HeightRequest="150" BackgroundColor="Transparent"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout>
+                <ScrollView>
+                    <StackLayout Padding="15,50,15,20">
 
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="70"/>
-                            <RowDefinition Height="70"/>
-                            <RowDefinition Height="70"/>
-                            <RowDefinition Height="70"/>
-                        </Grid.RowDefinitions>
+                        <Grid Margin="15,0,10,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
 
-                        <Label Text="Nombre del producto:"
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Text="Nombre del producto:" VerticalOptions="Center"
                                 FontSize="25" FontAttributes="Bold" Grid.Column="0" Grid.Row="0"/>
-                        <Label Text="Precio del producto: "
+                            <Label Text="Precio del producto: " VerticalOptions="Center"
                                 FontSize="25" FontAttributes="Bold" Grid.Column="0" Grid.Row="1"/>
-                        <Label Text="Cantidad:"
+                            <Label Text="Cantidad: " VerticalOptions="Center"
                                 FontSize="25" FontAttributes="Bold" Grid.Column="0" Grid.Row="2"/>
-                        <Label Text="Descripcion del producto:"
+                            <Label Text="Descripcion del producto:" VerticalOptions="Center"
                                 FontSize="25" FontAttributes="Bold" Grid.Column="0" Grid.Row="3"/>
 
-                        <Label x:Name="lbl_nombre" Text=""
+                            <Label x:Name="lbl_nombre" Text="" VerticalOptions="Center"
                                 FontSize="25"  Grid.Column="1" Grid.Row="0"/>
-                        <Label x:Name="lbl_precio" Text=""
+
+                            <Label x:Name="lbl_precio" Text="" VerticalOptions="Center"
                                 FontSize="25" Grid.Column="1" Grid.Row="1"/>
-                        <Label x:Name="lbl_cantidad" Text=""
+
+                            <Label x:Name="lbl_cantidad" Text="" VerticalOptions="Center"
                                 FontSize="25" Grid.Column="1" Grid.Row="2"/>
-                        <Label x:Name="lbl_descripcion" Text=""
+
+                            <Label x:Name="lbl_descripcion" Text="" VerticalOptions="Center"
                                 FontSize="25" Grid.Column="1" Grid.Row="3"/>
-                    </Grid>
+                        </Grid>
 
-                    <Button Text="atras" FontSize="20"/>
+                        <Frame BackgroundColor="Transparent" Padding="0">
+                            <ImageButton Source="regreso.png" Clicked="ImageButton_Regresar"
+                                 HeightRequest="100" WidthRequest="100" BackgroundColor="Transparent"/>
+                        </Frame>
 
-                </StackLayout>
+                    </StackLayout>
+                </ScrollView>
             </StackLayout>
-        </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

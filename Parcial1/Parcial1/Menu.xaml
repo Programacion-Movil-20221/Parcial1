@@ -4,10 +4,20 @@
              x:Class="Parcial1.Menu"
              Title="Menu">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Frame BackgroundColor="Beige">
+            <StackLayout>
+                <Image Source="cuenta" BackgroundColor="Transparent"/>
+
+                <StackLayout Padding="0">
+                    <Button Text="Page Factura" CornerRadius="32" FontSize="25"
+                            HeightRequest="80" FontAttributes="Bold"
+                            BackgroundColor="Wheat" Clicked="Ir_Page_Factur"/>
+                    <Button Text="Page Productos" CornerRadius="32" FontSize="25"
+                            HeightRequest="80" FontAttributes="Bold"
+                            BackgroundColor="Wheat" Clicked="Ir_Page_Product" />
+                </StackLayout>
+                <Image Source="atcaffe"/>
+            </StackLayout>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>
