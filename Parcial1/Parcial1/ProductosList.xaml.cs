@@ -14,6 +14,7 @@ namespace Parcial1
     public partial class ProductosList : ContentPage
     {
         public List<Products> ListaProductos { get; set; }
+
         public ProductosList()
         {
             InitializeComponent();
@@ -48,12 +49,14 @@ namespace Parcial1
             var item = (Products)e.SelectedItem;
             int j = HallarItemIndex(item.Nombre);
             var i = ListaProductos[j];
-            string texto = "Nombre: " + i.Nombre +
-                    "\nTipo: " + i.Tipo +
-                    "\nPrecio: " + i.Precio +
-                    "\nUnidades: " + i.Unidades +
-                    "\nDescripcion: " + i.Descripcion;
-            DisplayAlert(i.Nombre, texto, "Atrás");
+
+
+            string nombre = i.Nombre.ToString();
+            int precio = int.Parse(i.Precio.ToString("0.##"));
+            int cantidad = int.Parse(i.Unidades.ToString("0.##"));
+            string descripcion = i.Descripcion.ToString();
+
+            Navigation.PushAsync(new MostrarProductos(nombre, precio, cantidad, descripcion));
         }
 
         private void MainSearchBar_TextChanged(object sender, TextChangedEventArgs e)
@@ -102,9 +105,22 @@ namespace Parcial1
             stackVisible.IsVisible = false;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void Button_Clicked(object sender, EventArgs a)
         {
-            Navigation.PushAsync(new MostrarProductos());
+
+
+            //var item = (Products)e.SelectedItem;
+            //int j = HallarItemIndex(item.Nombre);
+            //var i = ListaProductos[j];
+            ///*string texto = "Nombre: " + i.Nombre +
+            //        "\nTipo: " + i.Tipo +
+            //        "\nPrecio: " + i.Precio +
+            //        "\nUnidades: " + i.Unidades +
+            //        "\nDescripcion: " + i.Descripcion;*/
+
+
+            //string nombre = i.Nombre.ToString();
+            //Navigation.PushAsync(new MostrarProductos(nombre));
         }
     }
-}
+}       

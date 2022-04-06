@@ -28,15 +28,17 @@
                         <Label Text="Descripcion del producto:"
                                 FontSize="25" FontAttributes="Bold" Grid.Column="0" Grid.Row="3"/>
 
-                        <Label x:Name="lbl_nombre" Text="Nombre"
+                        <Label x:Name="lbl_nombre" Text=""
                                 FontSize="25"  Grid.Column="1" Grid.Row="0"/>
-                        <Label x:Name="lbl_precio" Text="Precio"
+                        <Label x:Name="lbl_precio" Text=""
                                 FontSize="25" Grid.Column="1" Grid.Row="1"/>
-                        <Label x:Name="lbl_cantidad" Text="Cantidad"
+                        <Label x:Name="lbl_cantidad" Text=""
                                 FontSize="25" Grid.Column="1" Grid.Row="2"/>
-                        <Label x:Name="lbl_descripcion" Text="Descripcion"
+                        <Label x:Name="lbl_descripcion" Text=""
                                 FontSize="25" Grid.Column="1" Grid.Row="3"/>
                     </Grid>
+
+                    <Button Text="atras" FontSize="20"/>
 
                 </StackLayout>
             </StackLayout>

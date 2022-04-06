@@ -83,6 +83,7 @@
             <!--Lista de productos-->
             <ScrollView Margin="5">
                 <ListView x:Name="ListadoProductos" HasUnevenRows="True"
+                          ItemsSource="{Binding ListaProductos}"
                           ItemSelected="ListadoProductos_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -111,7 +112,9 @@
                                                 <Label Grid.Row="1" Grid.Column="1" FontSize="15"
                                                    Text="{Binding Tipo}" TextColor="Gray"/>
 
-                                                <Button Text="detalle" Clicked="Button_Clicked" Grid.Column="2" Grid.RowSpan="2"/>
+                                                <!--<Button Text="detalle" Clicked="Button_Clicked" Grid.Column="2" Grid.RowSpan="2"/>-->
+                                            <BoxView Grid.Column="2" Grid.RowSpan="2" BackgroundColor="Navy"
+                                                     />
 
 
 

@@ -12,9 +12,13 @@ namespace Parcial1
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MostrarProductos : ContentPage
     {
-        public MostrarProductos()
+        public MostrarProductos(string nombre, int precio, int cantidad, string descripcion)
         {
             InitializeComponent();
+            lbl_nombre.Text = nombre;
+            lbl_precio.Text = precio.ToString();
+            lbl_cantidad.Text = cantidad.ToString();
+            lbl_descripcion.Text = descripcion;
         }
     }
 }
